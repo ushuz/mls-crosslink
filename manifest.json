@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "MLS Crosslink",
+  "description": "Linking MLS websites, such as rew.ca, bccondosandhomes.com, and paragonrels.com",
+
+  "icons": {
+    "48": "mls-logo.png",
+    "128": "mls-logo.png"
+  },
+
+  "version": "1.0",
+
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.rew.ca/properties/*",
+        "https://www.bccondosandhomes.com/listing/*",
+        "https://bcres.paragonrels.com/CollabCenter/*",
+        "https://bcres.paragonrels.com/CollabLink/*",
+        "https://bcres.paragonrels.com/publink/default.aspx*"
+      ],
+      "js": [ "content.js" ]
+    }
+  ],
+
+  "incognito": "split",
+
+  "host_permissions": [
+    "*://*.rew.ca/",
+    "*://*.bccondosandhomes.com/",
+    "*://*.paragonrels.com/"
+  ]
+}
